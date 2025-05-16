@@ -1,10 +1,9 @@
 version: '3.9'
 
 x-spark-common: &spark-common
-  image: bitnami/spark:latest
+  build: .
   volumes:
     - ./src:/opt/bitnami/spark/jobs
-  command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
   depends_on:
     - spark-master
   environment:
@@ -18,12 +17,15 @@ x-spark-common: &spark-common
     SPARK_SSL_ENABLED: no
     HADOOP_USER_NAME: hadoop
     HOME: /opt/bitnami/spark
+    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+    SPARK_HADOOP_FS_S3A_CREDENTIALS_PROVIDER: org.apache.hadoop.fs.s3a.TemporaryAWSCredentialsProvider
   networks:
     - datamasterylab
 
 services:
   spark-master:
-    image: bitnami/spark:latest
+    build: .
     volumes:
       - ./src:/opt/bitnami/spark/jobs
     command: bin/spark-class org.apache.spark.deploy.master.Master
@@ -38,16 +40,35 @@ services:
       SPARK_SSL_ENABLED: no
       HADOOP_USER_NAME: hadoop
       HOME: /opt/bitnami/spark
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      SPARK_HADOOP_FS_S3A_CREDENTIALS_PROVIDER: org.apache.hadoop.fs.s3a.TemporaryAWSCredentialsProvider
     networks:
       - datamasterylab
 
   spark-worker-1:
     <<: *spark-common
     hostname: spark-worker-1
+    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
 
   spark-worker-2:
     <<: *spark-common
     hostname: spark-worker-2
+    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+
+  spark-job:
+    build: .
+    volumes:
+      - ./src:/opt/bitnami/spark/jobs
+    command: sh -c "sleep 10 && bin/spark-submit --master spark://spark-master:7077 --conf spark.hadoop.security.authentication=simple --conf spark.hadoop.security.authorization=false --conf spark.hadoop.user.name=hadoop --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem --conf spark.hadoop.fs.s3a.credentials.provider=org.apache.hadoop.fs.s3a.TemporaryAWSCredentialsProvider --conf spark.driver.extraJavaOptions=-Divy.home=/opt/bitnami/spark/.ivy2 --packages org.apache.hadoop:hadoop-aws:3.3.1,com.amazonaws:aws-java-sdk:1.11.469 --repositories https://repo1.maven.org/maven2/ /opt/bitnami/spark/jobs/main.py"
+    depends_on:
+      - spark-master
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      SPARK_HADOOP_FS_S3A_CREDENTIALS_PROVIDER: org.apache.hadoop.fs.s3a.TemporaryAWSCredentialsProvider
+    networks:
+      - datamasterylab
 
 networks:
   datamasterylab:
