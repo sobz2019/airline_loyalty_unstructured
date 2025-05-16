@@ -1,0 +1,37 @@
+# Python package metadata
+*.egg-info/
+*.egg
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+dist/
+build/
+*.so
+.Python
+develop-eggs/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env/
+
+# Logs
+logs/
+*.log
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Project specific
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+.env
+docker/.env
+src/config/config.py
