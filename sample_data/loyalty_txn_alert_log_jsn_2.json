@@ -1,0 +1,74 @@
+[
+  {
+    "customer_id": "778123456",
+    "flight_details": {
+      "flight_no": "SQ305",
+      "departure": "SIN",
+      "arrival": "LHR",
+      "date": "2025-01-18"
+    },
+    "transaction_info": {
+      "earned_points": 8200,
+      "transaction_ref": "TXN-5467-ZXC",
+      "channel": "airport_kiosk"
+    },
+    "additional_info": {
+      "class": "Business",
+      "status": "Completed",
+      "baggage_allowance": "30kg",
+      "lounge_access": true
+    },
+    "promo_details": {
+      "code_used": "LOYAL25",
+      "bonus_points": 1500
+    }
+  },
+  {
+    "customer_id": "664789123",
+    "flight_details": {
+      "flight_no": "BA286",
+      "departure": "SFO",
+      "arrival": "LHR",
+      "date": "2025-02-03"
+    },
+    "transaction_info": {
+      "earned_points": 6500,
+      "transaction_ref": "TXN-3344-POI",
+      "channel": "website"
+    },
+    "additional_info": {
+      "class": "Premium Economy",
+      "status": "Completed",
+      "baggage_allowance": "23kg",
+      "lounge_access": true
+    },
+    "promo_details": {
+      "code_used": null,
+      "bonus_points": 0
+    }
+  },
+  {
+    "customer_id": "112345678",
+    "flight_details": {
+      "flight_no": "QR921",
+      "departure": "DOH",
+      "arrival": "MEL",
+      "date": "2024-12-30"
+    },
+    "transaction_info": {
+      "earned_points": 9000,
+      "transaction_ref": "TXN-7788-JKL",
+      "channel": "call_center"
+    },
+    "additional_info": {
+      "class": "First",
+      "status": "Completed",
+      "baggage_allowance": "40kg",
+      "lounge_access": true
+    },
+    "promo_details": {
+      "code_used": "HOLIDAY24",
+      "bonus_points": 2500
+    }
+  }
+]

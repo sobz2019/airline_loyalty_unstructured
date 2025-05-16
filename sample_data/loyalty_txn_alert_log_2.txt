@@ -1,0 +1,45 @@
+--- Loyalty Transaction Log Start ---
+Customer ID = 622459814
+Flight No: LH740
+Departure: FRA
+Arrival: JNB
+Date: 2025-01-15
+Earned Points: 6500
+Transaction Ref: TXN-3366-GHJ
+Channel: travel_agent
+
+Booking Class: J
+Fare Paid= EUR 2400
+Miles Multiplier: 1.5x (Promotion: WINTER_ESCAPE)
+Special_Service_Request: Wheelchair assistance
+--- End of Transaction ---
+
+*RECORD MODIFIED*
+Customer ID : 913782460
+Flight No= CX831
+Departure: HKG
+Arrival: YVR
+Date: 2025-02-10
+Earned Points= 4100
+Transaction Ref: TXN-7744-VBN
+Channel: mobile_app
+
+Premium Membership=Yes
+Seat Changed: 32A -> 34F (Emergency Exit)
+WiFi Package | Purchased using points: 1500
+Feedback Rating: 4/5
+--- End of Transaction ---
+
+Customer ID : 187526943
+Flight No: UA998
+Departure: ORD
+Arrival: NRT
+Date: 2024-12-22
+Earned Points= 5800
+Transaction Ref: TXN-1122-RTY
+Channel: call_center
+PARTNER: Car Rental | Provider: HERTZ | Additional Points: 800
+Booking Notes: Customer requested late check-in
+Status Match Request | Alliance: OneWorld | Status: Processing
+Agent Comment: Customer eligible for tier upgrade next month
+--- End of Transaction ---

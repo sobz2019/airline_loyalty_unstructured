@@ -1,0 +1,32 @@
+--- Loyalty Transaction Log Start ---
+Customer ID = 345678912
+Flight No: SQ318
+Departure: SIN
+Arrival: LHR
+Date: 2025-02-05
+Earned Points: 4500
+Transaction Ref: TXN-3456-MNB
+Channel: mobile_app
+
+Extra notes: Customer used lounge access.
+Tier Status: Gold
+Additional Miles= 500 anniversary bonus
+--- End of Transaction ---
+
+Customer ID : 234567891
+Flight No: QF9
+Departure: MEL
+Arrival: DXB
+Date: 2025-01-28
+Earned Points: 6000
+Transaction Ref: TXN-1122-QWE
+Channel: kiosk
+Special Request: Vegetarian meal
+Seat Location: 12A
+--- End of Transaction ---
+
+*PARTIAL DATA*
+Customer 876543: Earned 2200 points for flight AA123 from JFK to LAX on 2025-02-10.
+TXREF=TXN-8822-TTY | Source=airport_check_in
+Co-branded Card Used: Yes
+--- End of Transaction ---

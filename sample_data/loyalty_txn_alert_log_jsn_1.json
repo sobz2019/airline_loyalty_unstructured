@@ -1,0 +1,74 @@
+[
+  {
+    "customer_id": "445678912",
+    "flight_details": {
+      "flight_no": "EK380",
+      "departure": "DXB",
+      "arrival": "LAX",
+      "date": "2025-01-05"
+    },
+    "transaction_info": {
+      "earned_points": 6800,
+      "transaction_ref": "TXN-6723-ABD",
+      "channel": "mobile_app"
+    },
+    "additional_info": {
+      "class": "Business",
+      "status": "Completed",
+      "baggage_allowance": "32kg",
+      "lounge_access": true
+    },
+    "promo_details": {
+      "code_used": "NEWYEAR25",
+      "bonus_points": 1200
+    }
+  },
+  {
+    "customer_id": "221564879",
+    "flight_details": {
+      "flight_no": "TK067",
+      "departure": "IST",
+      "arrival": "BKK",
+      "date": "2025-02-12"
+    },
+    "transaction_info": {
+      "earned_points": 5200,
+      "transaction_ref": "TXN-1245-WER",
+      "channel": "website"
+    },
+    "additional_info": {
+      "class": "Premium Economy",
+      "status": "Completed",
+      "baggage_allowance": "23kg",
+      "lounge_access": false
+    },
+    "promo_details": {
+      "code_used": null,
+      "bonus_points": 0
+    }
+  },
+  {
+    "customer_id": "335789461",
+    "flight_details": {
+      "flight_no": "AF223",
+      "departure": "CDG",
+      "arrival": "GRU",
+      "date": "2024-12-15"
+    },
+    "transaction_info": {
+      "earned_points": 7500,
+      "transaction_ref": "TXN-9087-HJK",
+      "channel": "travel_agent"
+    },
+    "additional_info": {
+      "class": "First",
+      "status": "Completed",
+      "baggage_allowance": "32kg",
+      "lounge_access": true
+    },
+    "promo_details": {
+      "code_used": "WINTER24",
+      "bonus_points": 2000
+    }
+  }
+]
